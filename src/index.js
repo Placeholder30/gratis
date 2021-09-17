@@ -3,6 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 const morgan = require("morgan");
 const routes = require("./routes");
+const respond = require("./helpers/respond");
 const app = express();
 
 app.use(cors());
@@ -13,9 +14,7 @@ app.use(morgan("combined"));
 app.use("/api/v1", routes);
 
 app.get("/", (req, res) => {
-  res
-    .status(200)
-    .json({ message: "welcome to the gratis digital home endpoint" });
+  respond(res, 200, { message: "welcome to the gratis digital home endpoint" });
 });
 
 const port = process.env.PORT || 3000;
