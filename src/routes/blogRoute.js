@@ -1,4 +1,5 @@
 const express = require("express");
+const deleteBlogpostController = require("../controllers/deleteBlogpostController");
 const getAllBlogpostController = require("../controllers/getAllBlogpostController");
 const getBlogpostByIdController = require("../controllers/getBlogpostByIdController");
 const postBlogpostController = require("../controllers/postBlogpostController");
@@ -16,8 +17,6 @@ blogRoute.post("", postBlogpostController);
 
 blogRoute.put("", putBlogpostController);
 
-blogRoute.delete("", (req, res) => {
-  // delete a blog post
-});
+blogRoute.delete("", deleteBlogpostController);
 
 module.exports = blogRoute;

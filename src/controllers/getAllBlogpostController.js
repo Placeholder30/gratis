@@ -9,9 +9,17 @@ module.exports = async (req, res) => {
   }
   try {
     const result = await db("blogposts");
+    if (!result.length) {
+      respond(
+        res,
+        "please seed the database with 'yarn seed' or create a blogpost with the '/blog' route",
+        400
+      );
+      return;
+    }
     respond(res, result, 200);
   } catch (error) {
-    const errMessage = "no posts on the db...";
-    respond(res, errMessage, 403);
+    const errMessage = "something went wrong";
+    respond(res, errMessage, 500);
   }
 };
