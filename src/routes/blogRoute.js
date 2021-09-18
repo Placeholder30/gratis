@@ -1,17 +1,14 @@
 const express = require("express");
+const getAllBlogpostController = require("../controllers/getAllBlogpostController");
+const getBlogpostByIdController = require("../controllers/getBlogpostByIdController");
+const db = require("../db");
+const respond = require("../helpers/respond");
 
 const blogRoute = express.Router();
 
-blogRoute.get("", (req, res) => {
-  // fetch all blogs from db
-  if (req.query.page && req.query.limit) {
-    //implement pagination
-  }
-});
+blogRoute.get("", getAllBlogpostController);
 
-blogRoute.get("/:id", (req, res) => {
-  //get a blog from db by id
-});
+blogRoute.get("/:id", getBlogpostByIdController);
 
 blogRoute.post("", (req, res) => {
   //create a blog post

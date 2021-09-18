@@ -14,7 +14,7 @@ app.use(morgan("combined"));
 app.use("/api/v1", routes);
 
 app.get("/", (req, res) => {
-  respond(res, 200, { message: "welcome to the gratis digital home endpoint" });
+  respond(res, { message: "welcome to the gratis digital home endpoint" }, 400);
 });
 
 const port = process.env.PORT || 3000;
