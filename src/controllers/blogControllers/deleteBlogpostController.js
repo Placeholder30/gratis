@@ -1,5 +1,5 @@
-const db = require("../db");
-const respond = require("../helpers/respond");
+const db = require("../../db");
+const respond = require("../../helpers/respond");
 
 module.exports = async (req, res) => {
   const { id } = req.body;
