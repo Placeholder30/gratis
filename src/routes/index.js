@@ -5,5 +5,5 @@ const commentsRoute = require("./commentsRoute");
 const router = express.Router();
 
 router.use("/blog", blogRoute);
-router.use("/comments", commentsRoute);
+router.use("/comment", commentsRoute);
 module.exports = router;

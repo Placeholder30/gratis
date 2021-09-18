@@ -1,24 +1,19 @@
 const express = require("express");
+const deleteCommentController = require("../controllers/commentController/deleteCommentController");
+const getAllCommentsController = require("../controllers/commentController/getAllCommentsController");
+const getCommentByIdController = require("../controllers/commentController/getCommentByIdController");
+const postCommentController = require("../controllers/commentController/postCommentController");
+const putCommentController = require("../controllers/commentController/putCommentController");
 
 const commentsRoute = express.Router();
 
-commentsRoute.get("", (req, res) => {
-  //fetch all comments from db
-});
+commentsRoute.get("", getAllCommentsController);
 
-commentsRoute.get("/:id", (req, res) => {
-  // get a comment with id
-});
+commentsRoute.get("/:id", getCommentByIdController);
 
-commentsRoute.post("", (req, res) => {
-  //create a comment
-});
-commentsRoute.put("", (req, res) => {
-  //edit a comment
-});
+commentsRoute.post("", postCommentController);
+commentsRoute.put("", putCommentController);
 
-commentsRoute.delete("", (req, res) => {
-  //delete a comment
-});
+commentsRoute.delete("", deleteCommentController);
 
 module.exports = commentsRoute;

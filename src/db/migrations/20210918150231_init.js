@@ -25,6 +25,7 @@ exports.up = async function (knex) {
         .integer("blogpostId")
         .references("id")
         .inTable("blogposts")
+        .notNullable()
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
       table.timestamps(true, true);
