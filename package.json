@@ -19,7 +19,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "node src/",
+    "start": "cd src/ && node index.js",
     "dev": "nodemon src/",
     "migrate:up": "npx knex migrate:latest --knexfile ./src/db/knexfile.js",
     "migrate:down": "npx knex migrate:down --knexfile ./src/db/knexfile.js",
