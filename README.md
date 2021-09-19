@@ -130,3 +130,10 @@ To run this project, you will need to add the following environment variables to
 `POSTGRES_USER`=
 
 `PASSWORD`=
+## Tools Used
+
+- NodeJS
+- Express
+- Postgres
+- Knex
+- Joi
