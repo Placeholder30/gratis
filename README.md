@@ -2,7 +2,7 @@
 
 A simple blog RESTFUL API
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-
+### Hosted URL: https://gratis-app.herokuapp.com
 ## Instructions to run the app locally
 
 clone the repo
