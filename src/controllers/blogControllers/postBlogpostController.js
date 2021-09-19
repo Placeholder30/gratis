@@ -9,8 +9,7 @@ module.exports = async (req, res) => {
     post,
   });
   if (error) {
-    respond(res, error.message, 400);
-    return;
+    return respond(res, error.message, 400);
   }
   try {
     const isExist = await db("blogposts").where({ title }); //check if title already exists
@@ -18,12 +17,12 @@ module.exports = async (req, res) => {
       const result = await db("blogposts")
         .insert({ title, post })
         .returning("*");
-      respond(res, result, 201);
+      return respond(res, result, 201);
     } else {
-      respond(res, "a post with that title already exists", 400);
+      return respond(res, "a post with that title already exists", 400);
     }
   } catch (error) {
     console.log(error);
-    respond(res, "something went wrong", 500);
+    return respond(res, "something went wrong", 500);
   }
 };

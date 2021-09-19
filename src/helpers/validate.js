@@ -11,7 +11,6 @@ exports.postBlogpostSchema = Joi.object({
 
 exports.putBlogpostSchema = Joi.object({
   id: Joi.number(),
-  title: Joi.string().min(3).required(),
   post: Joi.string().min(10).required(),
 });
 

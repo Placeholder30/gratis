@@ -3,14 +3,13 @@ const respond = require("../../helpers/respond");
 const { putBlogpostSchema } = require("../../helpers/validate");
 
 module.exports = async (req, res) => {
-  const { id, title, post } = req.body;
+  const { id, post } = req.body;
   const { error } = putBlogpostSchema({
     id,
-    title,
     post,
   });
   if (error) {
-    respond(res, error.message, 400);
+    return respond(res, error.message, 400);
   }
   try {
     const result = await db("blogposts")
@@ -18,11 +17,10 @@ module.exports = async (req, res) => {
       .update({ title, post })
       .returning("*");
     if (!result.length) {
-      respond(res, "could not find a blogpost with that id", 400);
-      return;
+      return respond(res, "could not find a blogpost with that id", 400);
     }
     respond(res, result, 200);
   } catch (error) {
-    respond(res, "something went wrong", 500);
+    return respond(res, "something went wrong", 500);
   }
 };

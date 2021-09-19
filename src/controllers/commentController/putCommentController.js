@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   const { id, comment } = req.body;
   const { error } = putCommentsSchema.validate({ id, comment });
   if (error) {
-    respond(res, error.message, 400);
+    return respond(res, error.message, 400);
   }
   try {
     const result = await db("comments")
@@ -14,11 +14,10 @@ module.exports = async (req, res) => {
       .update({ comment })
       .returning("*");
     if (!result.length) {
-      respond(res, "could not find a comment with that id", 400);
-      return;
+      return respond(res, "could not find a comment with that id", 400);
     }
-    respond(res, result, 200);
+    return respond(res, result, 200);
   } catch (error) {
-    respond(res, "something went wrong", 500);
+    return respond(res, "something went wrong", 500);
   }
 };
