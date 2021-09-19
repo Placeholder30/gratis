@@ -10,6 +10,6 @@ module.exports = async (req, res) => {
       return respond(res, result, 200);
     }
   } catch (error) {
-    return respond(res, "something went wrong");
+    return respond(res, "something went wrong", 500);
   }
 };

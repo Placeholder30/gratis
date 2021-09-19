@@ -26,15 +26,15 @@ module.exports = async (req, res) => {
     }
   }
   try {
-    const result = await db("blogposts");
+    const result = await db("blogposts").select("*");
     if (!result.length) {
       return respond(
         res,
         "please seed the database with 'yarn seed' or create a blogpost with the '/blog' route",
-        400
+        200
       );
     }
-    respond(res, result, 200);
+    return respond(res, result, 200);
   } catch (error) {
     const errMessage = "something went wrong";
     return respond(res, errMessage, 500);

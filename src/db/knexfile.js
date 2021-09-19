@@ -1,13 +1,12 @@
 // Update with your config settings.
 require("dotenv").config();
-const { DEV_USER, DEV_PASSWORD } = process.env;
 const { knexSnakeCaseMappers } = require("objection");
 module.exports = {
   client: "postgresql",
   connection: {
     database: "gratis_db",
-    user: "malik",
-    password: 1234,
+    user: process.env.POSTGRES_USER || "malik",
+    password: process.env.PASSWORD || "1234",
   },
   pool: {
     min: 2,

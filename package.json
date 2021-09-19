@@ -23,6 +23,6 @@
     "dev": "nodemon src/",
     "migrate:up": "npx knex migrate:latest --knexfile ./src/db/knexfile.js",
     "migrate:down": "npx knex migrate:down --knexfile ./src/db/knexfile.js",
-    "seed": "npx knex seed:run --knexfile src/db/knexfile.js"
+    "seed": "npx knex seed:run --knexfile ./src/db/knexfile.js"
   }
 }
