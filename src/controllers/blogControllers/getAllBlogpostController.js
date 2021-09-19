@@ -3,6 +3,7 @@ const respond = require("../../helpers/respond");
 const { paginatedSchema } = require("../../helpers/validate");
 
 module.exports = async (req, res) => {
+  console.log(process.env.user);
   if (req.query.page && req.query.limit) {
     let { page, limit } = req.query;
     const { error } = paginatedSchema.validate({
