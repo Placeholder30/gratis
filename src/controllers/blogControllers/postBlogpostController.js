@@ -1,6 +1,6 @@
 const db = require("../../db");
 const respond = require("../../helpers/respond");
-const { postBlogpostSchema } = require("../../helpers/validata");
+const { postBlogpostSchema } = require("../../helpers/validate");
 
 module.exports = async (req, res) => {
   const { title, post } = req.body;

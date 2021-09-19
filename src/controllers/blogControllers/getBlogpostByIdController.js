@@ -1,6 +1,6 @@
 const db = require("../../db");
 const respond = require("../../helpers/respond");
-const { getBlogpostIdSchema } = require("../../helpers/validata");
+const { getBlogpostIdSchema } = require("../../helpers/validate");
 
 module.exports = async (req, res) => {
   const { id } = req.params;

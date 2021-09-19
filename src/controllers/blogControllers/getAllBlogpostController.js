@@ -1,6 +1,6 @@
 const db = require("../../db");
 const respond = require("../../helpers/respond");
-const { paginatedSchema } = require("../../helpers/validata");
+const { paginatedSchema } = require("../../helpers/validate");
 
 module.exports = async (req, res) => {
   if (req.query.page && req.query.limit) {
