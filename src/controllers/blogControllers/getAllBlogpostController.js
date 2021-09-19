@@ -1,9 +1,17 @@
 const db = require("../../db");
 const respond = require("../../helpers/respond");
+const { paginatedSchema } = require("../../helpers/validata");
 
 module.exports = async (req, res) => {
   if (req.query.page && req.query.limit) {
     let { page, limit } = req.query;
+    const { error } = paginatedSchema.validate({
+      page,
+      limit,
+    });
+    if (error) {
+      respond(res, error.message, 400);
+    }
     page = parseInt(page - 1) * 10;
     limit = parseInt(limit);
     try {

@@ -1,9 +1,15 @@
 const db = require("../../db");
 const respond = require("../../helpers/respond");
+const { getBlogpostIdSchema } = require("../../helpers/validata");
 
 module.exports = async (req, res) => {
   const { id } = req.params;
 
+  const { error } = getBlogpostIdSchema.validate({ id });
+  if (error) {
+    respond(res, error.message, 400);
+    return;
+  }
   try {
     const result = await db("blogposts").where({ id }).select("*");
 
