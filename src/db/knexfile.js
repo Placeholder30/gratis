@@ -1,7 +1,6 @@
 // Update with your config settings.
 require("dotenv").config();
 const { knexSnakeCaseMappers } = require("objection");
-
 module.exports = {
   client: "postgresql",
   connection: {
