@@ -5,6 +5,7 @@ const { postCommentsSchema } = require("../../helpers/validate");
 module.exports = async (req, res) => {
   const { comment, blogpostId } = req.body;
   const { error } = postCommentsSchema.validate({ comment, blogpostId });
+
   if (error) {
     return respond(res, error.message, 400);
   }
