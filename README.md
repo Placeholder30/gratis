@@ -8,9 +8,11 @@ A simple blog RESTFUL API
 clone the repo
 
 - run `yarn install` to install all dependencies
-- create a postgres database called "gratis_db"
-- run `yarn dev` to start your server on port 3000
+- create a postgres database
+- run `yarn migrate:up` to initialize the database
 - run `yarn make:seed` to seed the database
+- run `yarn dev` to start your server on port 3000
+
 
 ## API Reference
 
