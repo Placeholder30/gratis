@@ -2,7 +2,7 @@
 
 A simple blog RESTFUL API
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-### Hosted URL: https://gratis-app.herokuapp.com
+### BASE_URL: https://gratis-app.herokuapp.com
 ## Instructions to run the app locally
 
 clone the repo
@@ -19,13 +19,13 @@ clone the repo
 #### Get all blogposts
 
 ```http
-  GET /api/v1/blog
+  GET ${base_url}/api/v1/blog
 ```
 
 #### Get blogposts with pagination
 
 ```http
-  GET /api/v1/blog
+  GET ${base_url}/api/v1/blog
 ```
 
 | Request parameter | Type     | Description                             |
@@ -46,7 +46,7 @@ clone the repo
 #### Create a blogpost
 
 ```http
-  POST /api/v1/blog
+  POST ${base_url}/api/v1/blog
 ```
 
 | Request data | Type     | Description                             |
@@ -57,7 +57,7 @@ clone the repo
 #### Edit a blogpost
 
 ```http
-  PUT /api/v1/blog
+  PUT ${base_url}/api/v1/blog
 ```
 
 | Request data | Type     | Description                                       |
@@ -68,7 +68,7 @@ clone the repo
 #### Delete a blogpost
 
 ```http
-  DELETE /api/v1/blog
+  DELETE ${base_url}/api/v1/blog
 ```
 
 | Request data | Type     | Description                                        |
@@ -80,13 +80,13 @@ clone the repo
 #### Get all comments
 
 ```http
-  GET /api/v1/comment
+  GET ${base_url}/api/v1/comment
 ```
 
 #### Get a comment
 
 ```http
-  GET /api/v1/${id}
+  GET ${base_url}/api/v1/${id}
 ```
 
 | Parameter | Type     | Description                       |
@@ -96,7 +96,7 @@ clone the repo
 #### Create a comment
 
 ```http
-  POST /api/v1/blog
+  POST ${base_url}/api/v1/blog
 ```
 
 | Request data | Type     | Description                                                 |
@@ -107,7 +107,7 @@ clone the repo
 #### Edit a comment
 
 ```http
-  PUT /api/v1/blog
+  PUT ${base_url}/api/v1/blog
 ```
 
 | Request data | Type     | Description                                      |
@@ -118,7 +118,7 @@ clone the repo
 #### Delete a comment
 
 ```http
-  DELETE /api/v1/blog
+  DELETE ${base_url}/api/v1/blog
 ```
 
 | Request data | Type     | Description                                       |
@@ -129,9 +129,13 @@ clone the repo
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`POSTGRES_USER`=
+    `host`=
+    `port`=
+    `user`=
+    `password`=
+    `database`=
 
-`PASSWORD`=
+
 ## Tools Used
 
 - NodeJS
