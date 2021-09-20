@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
   try {
     const result = await db("comments").select("*");
     if (!result.length) {
-      return respond(res, "please seed the database", 400);
+      return respond(res, "there are no comments, why don't you add one?", 200);
     } else {
       return respond(res, result, 200);
     }

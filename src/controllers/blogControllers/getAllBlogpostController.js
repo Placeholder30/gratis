@@ -3,7 +3,6 @@ const respond = require("../../helpers/respond");
 const { paginatedSchema } = require("../../helpers/validate");
 
 module.exports = async (req, res) => {
-  console.log(process.env.user);
   if (req.query.page && req.query.limit) {
     let { page, limit } = req.query;
     const { error } = paginatedSchema.validate({
@@ -29,11 +28,7 @@ module.exports = async (req, res) => {
   try {
     const result = await db("blogposts").select("*");
     if (!result.length) {
-      return respond(
-        res,
-        "please seed the database with 'yarn seed' or create a blogpost with the '/blog' route",
-        200
-      );
+      return respond(res, "the are no blogposts on the db, create one?", 200);
     }
     return respond(res, result, 200);
   } catch (error) {
