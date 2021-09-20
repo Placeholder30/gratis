@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
     const result = await db("blogposts").where({ id }).select("*");
 
     if (!result.length) {
-      return respond(res, "could not find that user", 400);
+      return respond(res, `could not find that blog with id: ${id}`, 400);
     }
     respond(res, result, 200);
   } catch (error) {

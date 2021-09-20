@@ -18,7 +18,11 @@ module.exports = async (req, res) => {
       .update({ post })
       .returning("*");
     if (!result.length) {
-      return respond(res, "could not find a blogpost with that id", 400);
+      return respond(
+        res,
+        `could not find a blogpost with that id id: ${id}`,
+        400
+      );
     }
     respond(res, result, 200);
   } catch (error) {

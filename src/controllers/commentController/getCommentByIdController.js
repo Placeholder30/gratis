@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     const result = await db("comments").where({ id }).select("*");
 
     if (!result.length) {
-      return respond(res, "could not find that comment", 400);
+      return respond(res, `could not find that comment with id: ${id}`, 400);
     }
     return respond(res, result, 200);
   } catch (error) {

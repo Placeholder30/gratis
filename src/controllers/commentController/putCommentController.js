@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
       .update({ comment })
       .returning("*");
     if (!result.length) {
-      return respond(res, "could not find a comment with that id", 400);
+      return respond(res, `could not find a comment with id: ${id}`, 400);
     }
     return respond(res, result, 200);
   } catch (error) {
