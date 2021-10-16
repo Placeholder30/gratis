@@ -2,7 +2,9 @@
 
 A simple blog RESTFUL API
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
 ### BASE_URL: https://gratis-app.herokuapp.com
+
 ## Instructions to run the app locally
 
 clone the repo
@@ -12,7 +14,6 @@ clone the repo
 - run `yarn migrate:up` to initialize the database
 - run `yarn make:seed` to seed the database
 - run `yarn dev` to start your server on port 3000
-
 
 ## API Reference
 
@@ -41,7 +42,7 @@ clone the repo
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of blog to fetch |
+| `id`      | `number` | **Required**. Id of blog to fetch |
 
 #### Create a blogpost
 
@@ -63,7 +64,7 @@ clone the repo
 | Request data | Type     | Description                                       |
 | :----------- | :------- | :------------------------------------------------ |
 | `id`         | `number` | **Required**. the id of the blogpost to be edited |
-| `post`       | `number` | **Required**. the edited post                     |
+| `post`       | `string` | **Required**. the edited post                     |
 
 #### Delete a blogpost
 
@@ -86,17 +87,17 @@ clone the repo
 #### Get a comment
 
 ```http
-  GET ${base_url}/api/v1/${id}
+  GET ${base_url}/api/v1/comment/${id}
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of blog to fetch |
+| `id`      | `number` | **Required**. Id of blog to fetch |
 
 #### Create a comment
 
 ```http
-  POST ${base_url}/api/v1/blog
+  POST ${base_url}/api/v1/comment
 ```
 
 | Request data | Type     | Description                                                 |
@@ -107,7 +108,7 @@ clone the repo
 #### Edit a comment
 
 ```http
-  PUT ${base_url}/api/v1/blog
+  PUT ${base_url}/api/v1/comment
 ```
 
 | Request data | Type     | Description                                      |
@@ -118,7 +119,7 @@ clone the repo
 #### Delete a comment
 
 ```http
-  DELETE ${base_url}/api/v1/blog
+  DELETE ${base_url}/api/v1/comment
 ```
 
 | Request data | Type     | Description                                       |
@@ -129,12 +130,11 @@ clone the repo
 
 To run this project, you will need to add the following environment variables to your .env file
 
-    `host`=
-    `port`=
-    `user`=
-    `password`=
-    `database`=
-
+    host=
+    port=
+    user=
+    password=
+    database=
 
 ## Tools Used
 
